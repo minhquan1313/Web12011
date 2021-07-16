@@ -1,0 +1,18 @@
+.header {
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.5;
+  font-size: 20px;
+  flex-direction: column;
+}
+.header__title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #252527;
+}
+.header__subTitle {
+  color: $darkColorText;
+}
