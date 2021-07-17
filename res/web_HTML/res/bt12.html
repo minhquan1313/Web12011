@@ -8,7 +8,7 @@
   </head>
   <body>
     <form action="#">
-      <table bgcolor="#00FFFF" border="1" align="center">
+      <table bgcolor="#00FFFF" border="1" align="center" width="100%">
         <caption>
           <h2>THÔNG TIN ĐĂNG KÝ</h2>
         </caption>
@@ -16,20 +16,20 @@
         <tbody>
           <tr>
             <td>Họ tên</td>
-            <td><input type="text" placeholder="Nhập họ tên ở đây!" /></td>
+            <td><input required type="text" placeholder="Nhập họ tên ở đây!" /></td>
           </tr>
           <tr>
             <td>Giới tính</td>
             <td>
-              <input type="radio" name="gender" id="m" />
+              <input required type="radio" name="gender" id="m" />
               <label for="m">Nam</label>
-              <input type="radio" name="gender" id="f" />
+              <input required type="radio" name="gender" id="f" />
               <label for="f">Nữ</label>
             </td>
           </tr>
           <tr>
             <td>Ngày sinh</td>
-            <td><input type="date" name="birth" /></td>
+            <td><input required type="date" name="birth" /></td>
           </tr>
           <tr>
             <td>Điều bạn quan tâm</td>
@@ -45,7 +45,7 @@
           <tr>
             <td>Địa chỉ</td>
             <td>
-              <textarea name="addr" cols="50" rows="5"></textarea>
+              <textarea required name="addr"></textarea>
             </td>
           </tr>
           <tr>
