@@ -82,7 +82,7 @@ footer {
       }
     }
   }
-  :checked {
+  &:checked {
     ~ .footerBtn {
       i {
         transform: rotate(180deg);

@@ -99,12 +99,12 @@ a {
   left: 0;
   right: 0;
   height: 20%;
-  background: -webkit-gradient(linear, left bottom, left top, from(#8640e1), color-stop(30%, #6370e4), to(#6370e400));
-  background: linear-gradient(0deg, #8640e1 0%, #6370e4 30%, #6370e400);
+  background: -webkit-gradient(linear, left bottom, left top, from(#6370e4), color-stop(30%, #6370e4), to(transparent));
+  background: linear-gradient(to top, #6370e4 0%, #6370e4 30%, transparent);
 }
 
 .item#html .item__name {
-  background-image: linear-gradient(135deg, #6370e4 0%, #8640e1 100%);
+  background: #6370e4;
   color: #fff;
 }
 
@@ -277,14 +277,14 @@ footer {
   }
 }
 
-#footerBtn_checkbox :checked ~ .footerBtn i {
+#footerBtn_checkbox:checked ~ .footerBtn i {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
   -webkit-animation: none;
           animation: none;
 }
 
-#footerBtn_checkbox :checked ~ .footer_wrapper {
+#footerBtn_checkbox:checked ~ .footer_wrapper {
   height: 40px;
 }
 
