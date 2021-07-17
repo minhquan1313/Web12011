@@ -75,6 +75,11 @@
   color: #ccc;
 }
 
+.item#html .item__name {
+  background: #6370e4;
+  color: #fff;
+}
+
 .item#html .item__img::after {
   content: "";
   position: absolute;
@@ -84,11 +89,6 @@
   height: 20%;
   background: -webkit-gradient(linear, left bottom, left top, from(#6370e4), color-stop(30%, #6370e4), to(transparent));
   background: linear-gradient(to top, #6370e4 0%, #6370e4 30%, transparent);
-}
-
-.item#html .item__name {
-  background: #6370e4;
-  color: #fff;
 }
 
 .item__cover {

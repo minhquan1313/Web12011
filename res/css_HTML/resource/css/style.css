@@ -132,11 +132,7 @@ footer.dark .footerBtn i {
 }
 
 ::-webkit-scrollbar {
-  background: #252525;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #1b1b1b;
+  width: 0;
 }
 
 #main {
@@ -263,7 +259,7 @@ footer.dark .footerBtn i {
   overflow: hidden;
 }
 
-.practiceItem:hover a {
+.practiceItem:hover .pt .practice__Name-card {
   width: 100%;
   text-align: center;
   font-size: 32px;
@@ -273,7 +269,7 @@ footer.dark .footerBtn i {
   padding-top: 50%;
 }
 
-.practiceItem a {
+.practiceItem .pt .practice__Name-card {
   position: absolute;
   top: 0;
   left: 0;
@@ -296,7 +292,7 @@ footer.dark .footerBtn i {
   transition: 0.3s;
 }
 
-.practiceItem a::after {
+.practiceItem .pt .practice__Name-card::after {
   position: absolute;
   left: 100%;
   top: 0;
@@ -308,8 +304,12 @@ footer.dark .footerBtn i {
           clip-path: polygon(0 0, 50% 50%, 0 100%);
 }
 
-.practiceItem a .practiceName {
+.practiceItem .pt .practice__Name-card .practiceName {
   color: #fff;
+}
+
+.practiceItem .practiceItem__wrapper {
+  display: block;
 }
 
 .practiceItem .practiceItem__BG {

@@ -34,6 +34,12 @@
   }
 
   &#html {
+    .item__name {
+      // background-image: linear-gradient(135deg, #6370e4 0%, #8640e1 100%);
+      background: #6370e4;
+      // background: #8640e1;
+      color: #fff;
+    }
     .item__img {
       &::after {
         content: "";
@@ -44,12 +50,6 @@
         height: 20%;
         background: linear-gradient(to top, #6370e4 0%, #6370e4 30%, transparent);
       }
-    }
-    .item__name {
-      // background-image: linear-gradient(135deg, #6370e4 0%, #8640e1 100%);
-      background: #6370e4;
-      // background: #8640e1;
-      color: #fff;
     }
   }
 }
