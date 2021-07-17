@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="#">
+      <table bgcolor="#00FFFF" border="1" align="center">
+        <caption>
+          <h2>THÔNG TIN ĐĂNG KÝ</h2>
+        </caption>
+
+        <tbody>
+          <tr>
+            <td>Họ tên</td>
+            <td><input type="text" placeholder="Nhập họ tên ở đây!" /></td>
+          </tr>
+          <tr>
+            <td>Giới tính</td>
+            <td>
+              <input type="radio" name="gender" id="m" />
+              <label for="m">Nam</label>
+              <input type="radio" name="gender" id="f" />
+              <label for="f">Nữ</label>
+            </td>
+          </tr>
+          <tr>
+            <td>Ngày sinh</td>
+            <td><input type="date" name="birth" /></td>
+          </tr>
+          <tr>
+            <td>Điều bạn quan tâm</td>
+            <td>
+              <input type="checkbox" name="ck1" id="ck1" />
+              <label for="ck1">Kinh tế</label>
+              <input type="checkbox" name="ck1" id="ck2" />
+              <label for="ck2">Xã hội</label>
+              <input type="checkbox" name="ck1" id="ck3" />
+              <label for="ck3">Giải trí</label>
+            </td>
+          </tr>
+          <tr>
+            <td>Địa chỉ</td>
+            <td>
+              <textarea name="addr" cols="50" rows="5"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>Học vấn</td>
+            <td>
+              <select name="degree" id="degree">
+                <option value="t1">Cao đẳng</option>
+                <option value="t2">Trung cấp</option>
+                <option value="t3">Trung học</option>
+                <option value="t4">Tiểu học</option>
+              </select>
+            </td>
+          </tr>
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <td colspan="2" align="center">
+              <button type="submit">Gửi thông tin</button>
+              <button type="reset">Nhập lại</button>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </form>
+  </body>
+</html>

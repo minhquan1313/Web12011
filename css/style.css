@@ -277,14 +277,14 @@ footer {
   }
 }
 
-#footerBtn_checkbox:checked ~ .footerBtn i {
+#footerBtn_checkbox :checked ~ .footerBtn i {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
   -webkit-animation: none;
           animation: none;
 }
 
-#footerBtn_checkbox:checked ~ .footer_wrapper {
+#footerBtn_checkbox :checked ~ .footer_wrapper {
   height: 40px;
 }
 
