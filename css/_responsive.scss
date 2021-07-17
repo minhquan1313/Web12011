@@ -52,14 +52,6 @@
       backdrop-filter: grayscale(1);
     }
   }
-  .footer_wrapper {
-    height: 0;
-  }
-  .footerBtn {
-    i {
-      display: block;
-    }
-  }
 }
 // Tablet
 @media (min-width: 740px) and (max-width: 1023px) {
@@ -73,14 +65,6 @@
   .item__name {
     border-radius: 0 0 8px 8px;
   }
-  .footer_wrapper {
-    height: 0;
-  }
-  .footerBtn {
-    i {
-      display: block;
-    }
-  }
 }
 // Mobile B
 @media (max-width: 739px) {
@@ -90,9 +74,6 @@
   }
   .item__cover {
     border-radius: 0;
-  }
-  footer {
-    position: fixed;
   }
 }
 // Mobile S

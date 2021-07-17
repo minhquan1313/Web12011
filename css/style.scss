@@ -1,14 +1,4 @@
-@import "myVar";
-@import "baseCss";
-
-@font-face {
-  font-family: panton;
-  src: url(../font/iCielPanton-Light.otf);
-}
-body {
-  font-family: panton;
-}
-
+@import "myvar";
 #main {
   position: relative;
   width: 100%;

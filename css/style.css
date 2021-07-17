@@ -1,30 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-body {
-  -webkit-tap-highlight-color: transparent;
-  background: #f0f0f0;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-  outline: none;
-}
-
-@font-face {
-  font-family: panton;
-  src: url(../font/iCielPanton-Light.otf);
-}
-
-body {
-  font-family: panton;
-}
-
 #main {
   position: relative;
   width: 100%;
@@ -149,13 +122,15 @@ body {
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
+  color: #595959;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
 }
 
-.footer_wrapper {
+footer .footer_wrapper {
   height: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -175,40 +150,42 @@ footer {
   transition: 0.3s;
 }
 
-.footer_wrapper > * {
+footer .footer_wrapper > * {
   padding: 0 8px;
   line-height: 40px;
   white-space: nowrap;
 }
 
-.footer_wrapper > * + * {
+footer .footer_wrapper > * + * {
   border-left: 1px solid #ccc;
 }
 
-.footerBtn {
+footer .footerBtn {
   position: absolute;
   bottom: 100%;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  color: #595959;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
 }
 
-.footerBtn i {
-  display: none;
+footer .footerBtn i {
+  display: block;
   font-size: 28px;
+  color: currentColor;
   background: #fff;
   border-radius: 50%;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   margin-bottom: 8px;
+  -webkit-transform: rotate(540deg);
+          transform: rotate(540deg);
 }
 
-#school span {
+footer #school span {
   -webkit-animation: school 0.3s infinite alternate;
           animation: school 0.3s infinite alternate;
 }
@@ -231,68 +208,50 @@ footer {
   }
 }
 
-#name {
+footer #name {
   margin-left: auto;
 }
 
-#footerBtn_checkbox {
+footer #footerBtn_checkbox {
   display: none;
 }
 
-#footerBtn_checkbox ~ .footerBtn i {
-  -webkit-animation: footerBtn 1s infinite linear;
-          animation: footerBtn 1s infinite linear;
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s;
+footer #footerBtn_checkbox:checked ~ .footerBtn i {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
 }
 
-@-webkit-keyframes footerBtn {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  33% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
-  }
-  66% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-  }
-  100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
+footer #footerBtn_checkbox:checked ~ .footer_wrapper {
+  height: 0;
 }
 
-@keyframes footerBtn {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  33% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
-  }
-  66% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-  }
-  100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
+footer.dark {
+  color: #ccc;
 }
 
-#footerBtn_checkbox:checked ~ .footerBtn i {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-  -webkit-animation: none;
-          animation: none;
+footer.dark .footer_wrapper {
+  background: #252525;
+  -webkit-box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.4);
 }
 
-#footerBtn_checkbox:checked ~ .footer_wrapper {
-  height: 40px;
+footer.dark .footer_wrapper > * + * {
+  border-left: 1px solid #595959;
+}
+
+footer.dark .footerBtn i {
+  -webkit-box-shadow: 0 0 6px black;
+          box-shadow: 0 0 6px black;
+  background: #252525;
+}
+
+@media (max-width: 1023px) {
+  .footer_wrapper {
+    height: 40px !important;
+  }
+  .footerBtn {
+    display: none;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -333,12 +292,6 @@ footer {
     -webkit-backdrop-filter: grayscale(1);
             backdrop-filter: grayscale(1);
   }
-  .footer_wrapper {
-    height: 0;
-  }
-  .footerBtn i {
-    display: block;
-  }
 }
 
 @media (min-width: 740px) and (max-width: 1023px) {
@@ -352,12 +305,6 @@ footer {
   .item__name {
     border-radius: 0 0 8px 8px;
   }
-  .footer_wrapper {
-    height: 0;
-  }
-  .footerBtn i {
-    display: block;
-  }
 }
 
 @media (max-width: 739px) {
@@ -367,9 +314,6 @@ footer {
   }
   .item__cover {
     border-radius: 0;
-  }
-  footer {
-    position: fixed;
   }
 }
 
