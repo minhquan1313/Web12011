@@ -5,6 +5,97 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      html {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .main {
+        min-width: 600px;
+        width: 600px;
+        padding: 12px;
+      }
+      .title {
+        color: blue;
+      }
+      .nav {
+        position: relative;
+        margin-top: 8px;
+        display: flex;
+        align-items: center;
+        color: cyan;
+        background: currentColor;
+      }
+      .nav::before {
+        position: absolute;
+        content: "";
+        top: -7px;
+        left: 0;
+        right: 0;
+        border-top: 1px solid currentColor;
+      }
+      .nav__Item {
+        text-transform: uppercase;
+        padding: 8px 12px;
+        color: #268080;
+      }
+      .nav__Item:last-child {
+        flex: 1;
+      }
+      .news {
+        color: #595959;
+        margin-top: 12px;
+      }
+      .news__title {
+        margin-bottom: 12px;
+      }
+      .news__info {
+      }
+      .news__info > img {
+        display: inline;
+        width: 300px;
+        float: right;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div class="main">
+      <h1 class="title">Example Cafe</h1>
+
+      <nav class="nav">
+        <div class="nav__Item">trang chủ</div>
+        <div class="nav__Item">thực đơn</div>
+        <div class="nav__Item">Khuyến mãi</div>
+        <div class="nav__Item">liên hệ</div>
+      </nav>
+
+      <div class="news">
+        <h2 class="news__title">
+          Example Cafe phục vụ thức ăn hữu cơ có nguồn gốc tại địa phương
+        </h2>
+        <p class="news__info">
+          <img src="./img/cafe.png" alt="" />
+          Với tằm nhìn tuyệt đẹp ra quang cảnh đại dương, Example Cafe mang đến
+          môi trường hoàn hảo đễ thư giãn. <br /><br />
+          Thực đơn của chúng tôi cung cấp thức ăn dùng cho bữa sáng, trưa và
+          tối, kế cả thức ăn chay.<br /><br />
+          Đến với Example Cafe, bạn có thể nhâm nhi một ly cà phê nóng, hay một
+          ly sinh tố làm mát. bạn không bao giờ cằn phải cảm thấy vội vã và có
+          thể thư giãn với bạn bê hoặc ngắm cảnh đại đương.
+        </p>
+      </div>
+      <div class="news">
+        <h2 class="news__title">Buổi tối đặc biệt cuối tuần này</h2>
+        <p class="news__info">
+          Cuồi tuần này, chúng tối tiếp tục phục vụ các món ăn vả thức uống đc
+          biết theo phong cách Anh sang trọng với các món làm hoàn toàn bằng
+          trứng, kem và bơ.
+        </p>
+      </div>
+    </div>
+  </body>
 </html>

@@ -5,6 +5,74 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .main {
+        padding: 12px;
+      }
+      html {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .title {
+        text-align: center;
+        padding: 0 0 8px;
+      }
+      table {
+        width: 600px;
+        max-width: 100%;
+        margin: 0 auto;
+        border: 2px solid #ccc;
+      }
+      table thead {
+        background: rgb(155, 155, 155);
+        color: #fff;
+      }
+      table tbody tr:nth-child(2n) {
+        background: #ccc;
+      }
+      table tbody tr:nth-child(2n + 1) {
+        background: rgb(231, 231, 231);
+      }
+      table tr > * {
+        padding: 4px;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div class="main">
+      <h1 class="title">Món ngon: Thịt kho sả</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Nguyên liệu</th>
+            <th>Số lượng</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Thịt nạc băm</td>
+            <td>200g</td>
+          </tr>
+          <tr>
+            <td>Củ sả</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>Ớt hiểm</td>
+            <td>1 trái</td>
+          </tr>
+          <tr>
+            <td>Gia vị: muối, nước mắm, đường, hạt nêm</td>
+            <td>Vừa đủ</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
 </html>

@@ -5,6 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      body {
+        width: 400px;
+        min-width: 400px;
+      }
+      div {
+        border: 2px solid #000;
+        background: yellow;
+        display: inline-block;
+        width: 45%;
+        height: 100px;
+        /* margin: 12px; */
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div>
+      Văn bản trong phân tử div 1 sử dụng các thuộc tính mặc định, phần văn bản
+      thừa sẽ tràn ra ngoài. Văn bản trong phần tử dịch 1 sử dụng các thuộc tính
+    </div>
+    <div style="opacity: 0"></div>
+    <div style="line-height: 20px; overflow: hidden">
+      Văn bản trong phân tử div 2 có thuộc tính line-heigh:20px,
+      overflow:hidden, không có thanh cuộn, phân văn bản thừa sẽ bị ẩn. Văn bản
+      trong phân tử div 2 có thuộc tính line-heigh:20px, overflow:hidden, không
+      có thanh cuộn, phân văn bản thừa sẽ bị ẩn.
+    </div>
+    <div style="overflow: scroll">
+      Văn bản trong phần tử div 3 có thuộc tính overflow:scroll; có thanh cuộn.
+      Văn bản trong phần tử. div 3 thuộc tính Văn bản trong phần tử div 3 có
+      thuộc tính overflow:scroll; có thanh cuộn. Văn bản trong phần tử. div 3
+      thuộc tính
+    </div>
+  </body>
 </html>

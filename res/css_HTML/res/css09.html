@@ -5,6 +5,245 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .main {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        grid-template-rows: repeat(4, auto);
+        gap: 4px;
+        margin: 4px;
+      }
+      .main > div {
+        border: 1px solid rgb(173, 173, 173);
+        background: rgb(173, 173, 173, 0.3);
+        color: red;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* padding: 4px; */
+      }
+      .main > div:first-child {
+        /* padding: 30px; */
+        height: 60px;
+        text-transform: uppercase;
+        color: yellow;
+        background-image: url(https://star-name-registry.org/themes/star-name-registry/assets/img/placeholder.jpg);
+        background-size: cover;
+      }
+      .main > div:nth-child(1),
+      .main > div:nth-child(2),
+      .main > div:nth-child(6) {
+        grid-column: 1/4;
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: blue;
+        width: 100%;
+        height: 30px;
+      }
+      nav > div {
+        padding: 0 12px;
+        color: #fff;
+      }
+      #ct {
+        border: none;
+        display: block;
+        height: calc(100vh - (4px * 6) - 60px - (30px * 2));
+        background: rgba(173, 173, 173, 0.1);
+        overflow: hidden;
+      }
+      #ct .ct__wrapper {
+        display: flex;
+        flex-flow: row wrap;
+        margin: -8px;
+      }
+      #ct .ct__box {
+        max-width: 50%;
+        height: fit-content;
+      }
+      #ct .ct__box_content {
+        background: #ccc;
+        margin: 8px;
+        border-radius: 10px;
+        padding: 8px 0;
+        font-weight: normal;
+        color: #000;
+        overflow: hidden;
+      }
+      #ct .ct__box_content_Text {
+        padding: 0 8px;
+        overflow: scroll;
+        max-height: 200px;
+        text-indent: 16px;
+      }
+      #ct .ct__box_content_Text::-webkit-scrollbar {
+        height: 0;
+        width: 4px;
+      }
+      #ct .ct__box_content_Text::-webkit-scrollbar-thumb {
+        background: rgb(170, 170, 170);
+        /* background-image: linear-gradient(
+          45deg,
+          rgba(255, 255, 255, 1) 0%,
+          rgba(255, 255, 255, 1) 10%,
+          transparent 10%,
+          transparent 20%,
+          rgba(255, 255, 255, 1) 20%,
+          rgba(255, 255, 255, 1) 30%,
+          transparent 30%,
+          transparent 40%,
+          rgba(255, 255, 255, 1) 40%,
+          rgba(255, 255, 255, 1) 50%,
+          transparent 50%,
+          transparent 60%,
+          rgba(255, 255, 255, 1) 60%,
+          rgba(255, 255, 255, 1) 70%,
+          transparent 70%,
+          transparent 80%,
+          rgba(255, 255, 255, 1) 80%,
+          rgba(255, 255, 255, 1) 90%,
+          transparent 90%
+        );
+        background-size: 4px; */
+        /* background-attachment: fixed; */
+      }
+
+      #ri {
+        display: block;
+        background: #008000;
+      }
+      .ads {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 8px 18px;
+        width: 240px;
+        height: 200px;
+        background: wheat;
+        align-self: flex-start;
+        color: #000;
+        border-radius: 20px;
+        border: 2px solid #00df00;
+      }
+      #ft {
+        height: 30px;
+        background: rgba(176, 196, 222, 0.61);
+      }
+      #le {
+        background: green;
+        padding: 8px;
+      }
+      #le > ul {
+        color: #fff;
+        height: 100%;
+        margin-right: auto;
+        margin-left: 30px;
+      }
+      #le > ul > li {
+        padding: 8px;
+        padding-left: 0;
+        color: #fff;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div class="main">
+      <div>Điễn đàn công nghệ thông tin</div>
+      <div>
+        <nav>
+          <div>Trang chủ</div>
+          <div>Giới thiệu</div>
+          <div>Liên hệ</div>
+        </nav>
+      </div>
+      <div id="le">
+        <ul class="nav--side">
+          <li>C#</li>
+          <li>PHP & MySQL</li>
+          <li>XML</li>
+          <li>Java</li>
+          <li>SQLServer</li>
+          <li>ASP.NET</li>
+          <li>Androit</li>
+          <li>Windows Phone</li>
+        </ul>
+      </div>
+      <div id="ct">
+        <div class="ct__wrapper">
+          <div class="ct__box">
+            <div class="ct__box_content">
+              <div class="ct__box_content_Text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
+                aliquid perferendis expedita asperiores blanditiis facere quis
+                sint ullam cupiditate, architecto, iste iusto, consequuntur
+                dolor quasi cumque nihil? Neque laboriosam omnis vel adipisci
+                quasi beatae officia sequi quo incidunt, quaerat debitis
+                asperiores, accusamus nihil totam. Assumenda nesciunt tenetur
+                eaque inventore excepturi?
+              </div>
+            </div>
+          </div>
+          <div class="ct__box">
+            <div class="ct__box_content">
+              <div class="ct__box_content_Text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Mollitia cum voluptate dolor officiis officia quae eveniet
+                temporibus neque, atque, deserunt ullam. Magni dolor tempora
+                illo rerum eum odit voluptatem cumque doloribus, et, accusamus
+                nesciunt ipsam quos blanditiis necessitatibus delectus culpa
+                neque maxime. Animi veritatis adipisci error labore ex nam quia?
+              </div>
+            </div>
+          </div>
+          <div class="ct__box">
+            <div class="ct__box_content">
+              <div class="ct__box_content_Text">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Mollitia nesciunt pariatur quibusdam consectetur soluta quas
+                molestias ea obcaecati fugit eligendi voluptatum, quo magni hic
+                laborum porro debitis quis a voluptas magnam atque molestiae
+                tempore saepe veritatis! Veniam tenetur, at amet, aspernatur
+                aperiam harum culpa voluptatibus doloribus illum ipsa, velit
+                enim?
+              </div>
+            </div>
+          </div>
+          <div class="ct__box">
+            <div class="ct__box_content">
+              <div class="ct__box_content_Text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Praesentium impedit nisi ullam harum, libero nobis nemo iste
+                eius? Praesentium, deserunt laboriosam. Expedita, fugiat
+                corrupti possimus inventore voluptatum, illo, nemo optio dicta
+                ipsam porro quis tempore voluptatibus incidunt sunt tempora!
+                Laborum repudiandae voluptatem iste, optio, nam facere, quasi
+                quis commodi aut reiciendis molestiae aperiam a tque autem
+                voluptatum ullam? Tenetur excepturi laudantium esse beatae sunt
+                a ab? Numquam expedita natus repellat odio molestiae dolore
+                dolores dignissimos nisi a in. Atque neque mollitia veritatis
+                eligendi dolor. Saepe culpa eligendi voluptatibus deleniti,
+                adipisci nostrum?
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="ri">
+        <div class="ads">Vùng quảng cáo 1</div>
+        <div class="ads">Vùng quảng cáo 2</div>
+      </div>
+      <div id="ft">copyright 2018</div>
+    </div>
+  </body>
 </html>

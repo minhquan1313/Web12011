@@ -5,6 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .main {
+        overflow: hidden;
+        padding: 0 !important;
+        margin: 12px !important;
+      }
+      .border {
+        margin: 4px;
+        padding: 8px;
+        border: 2px solid #000;
+      }
+      span.border {
+        margin: 0;
+        padding: 4px;
+      }
+      .bg_Grey {
+        background: #ccc;
+        font-weight: bold;
+      }
+      .imgWrapper {
+        width: 50%;
+      }
+      .imgWrapper img {
+        width: 100%;
+        object-fit: cover;
+      }
+      .border--dash {
+        border-style: dashed;
+        border-color: blue;
+      }
+      .border--dot {
+        border-style: dotted;
+        border-color: red;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div class="main border">
+      <h1 class="border bg_Grey">Bài thực hành về Border</h1>
+      <p class="border">Bài thực hành này cung cấp cách định dạng khung cho văn bản</p>
+      <p class="border">
+        Mỗi phần tử được xử lý như một hộp văn bản có <span class="border bg_Grey">khung</span> độc lập, có thể thiết lập các
+        <span class="border bg_Grey">thuộc tính</span> định dạng.
+      </p>
+      <div class="border imgWrapper"><img src="https://blogcdn.muaban.net/wp-content/uploads/2021/04/template-la-gi.jpg" alt="" /></div>
+      <p class="border border--dash">
+        <!--  -->
+        Mỗi phần tử được xử lý như một <span class="border border--dot bg_Grey">hộp văn bản</span> có khung độc lập, có thể
+        <span class="border border--dot bg_Grey">thiết lập</span> các thuộc tính định dạng.
+      </p>
+    </div>
+  </body>
 </html>
