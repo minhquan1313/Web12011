@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      Nhập số phần tử: <input type="number" name="" id="inp" autofocus />
+    </div>
+    <button onclick="create()">Tạo mảng</button>
+    <button onclick="sortAsc()">Sắp xếp tăng dần</button>
+    <button onclick="sortDes()">Xắp xếp giảm dần</button>
+    <div id="out1">Mảng ban đầu: <span></span></div>
+    <div id="out2">Mảng tăng dần: <span></span></div>
+    <div id="out3">Mảng giảm dần: <span></span></div>
+    <script>
+      const out1 = document.querySelector("#out1>span");
+      const out2 = document.querySelector("#out2>span");
+      const out3 = document.querySelector("#out3>span");
+
+      var arr = [];
+      function create() {
+        const num = document.querySelector("#inp").value;
+        if (num) {
+          arr = [];
+          for (var i = 0; i < num; i++) {
+            arr.push(Math.trunc(Math.random() * 50));
+          }
+          render(out1, arr);
+          _default();
+        }
+      }
+      function sortAsc() {
+        if (arr.length > 0) {
+          var arr_ = [...arr];
+          for (var i in arr_) {
+            for (var j = i; j < arr_.length; j++) {
+              if (arr_[i] > arr_[j]) {
+                const z = arr_[i];
+                arr_[i] = arr_[j];
+                arr_[j] = z;
+              }
+            }
+          }
+          render(out2, arr_);
+        }
+      }
+      function sortDes() {
+        if (arr.length > 0) {
+          var arr_ = [...arr];
+          for (var i in arr_) {
+            for (var j = i; j < arr_.length; j++) {
+              if (arr_[i] < arr_[j]) {
+                const z = arr_[i];
+                arr_[i] = arr_[j];
+                arr_[j] = z;
+              }
+            }
+          }
+          render(out3, arr_);
+        }
+      }
+      function _default() {
+        out2.innerText = "";
+        out3.innerText = "";
+      }
+      function render(node, arr) {
+        node.innerText = arr.join("   ");
+      }
+    </script>
+  </body>
+</html>

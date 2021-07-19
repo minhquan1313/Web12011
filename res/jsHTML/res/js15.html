@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 style="border-bottom: 1px solid #000">Image Resizing</h1>
+    <div>
+      Scale:
+      <label>
+        <input type="radio" name="perc" id="10" />
+        10%
+      </label>
+      <label>
+        <input type="radio" name="perc" id="25" />
+        25%
+      </label>
+      <label>
+        <input type="radio" name="perc" id="50" />
+        50%
+      </label>
+      <label>
+        <input type="radio" name="perc" id="100" />
+        100%
+      </label>
+    </div>
+
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Landscape_reflection_in_Dal_Lake%2C_Srinagar%2C_Kashmir%2C_India.jpg"
+      alt=""
+    />
+    <script>
+      const inputs = document.querySelectorAll("input");
+      const img = document.querySelector("img");
+      // console.log(inputs);
+      for (var i of inputs) {
+        i.onclick = change;
+      }
+      function change(e) {
+        const percent = e.target.id;
+        img.style.zoom = `${percent}%`;
+      }
+    </script>
+  </body>
+</html>

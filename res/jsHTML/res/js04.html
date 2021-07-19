@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table border="1" align="center" cellspacing="1" cellpadding="4">
+      <tr>
+        <td colspan="2" align="center"><h2>Các phép tính số học</h2></td>
+      </tr>
+      <tr>
+        <td>Số thứ 1</td>
+        <td><input type="number" name="" id="s1" /></td>
+      </tr>
+      <tr>
+        <td>Số thứ 2</td>
+        <td><input type="number" name="" id="s2" /></td>
+      </tr>
+      <tr>
+        <td>Chọn phép toán</td>
+        <td>
+          <input type="radio" name="math" id="m1" />
+          <label for="m1">Cộng</label>
+          <input type="radio" name="math" id="m2" />
+          <label for="m2">Trừ</label>
+          <input type="radio" name="math" id="m3" />
+          <label for="m1">Nhân</label>
+          <input type="radio" name="math" id="m4" />
+          <label for="m4">Chia</label>
+        </td>
+      </tr>
+      <tr>
+        <td><button>Thực hiện</button></td>
+        <td id="out"></td>
+      </tr>
+    </table>
+    <script>
+      const out = document.querySelector("#out");
+      document.querySelector("button").onclick = () => {
+        const s1 = document.querySelector("#s1").value;
+        const s2 = document.querySelector("#s2").value;
+        const valid = s1 != "" && s1 != "";
+        if (valid) {
+          const type = document.querySelectorAll("input[name=math]");
+          var id = "";
+          for (var i of type) {
+            // console.log(i);
+            if (i.checked) {
+              id = i.id;
+              break;
+            }
+          }
+        }
+        if (id) {
+          var res = "";
+          switch (id) {
+            case "m1":
+              res = cg(parseFloat(s1), parseFloat(s2));
+              break;
+            case "m2":
+              res = tr(parseFloat(s1), parseFloat(s2));
+              break;
+            case "m3":
+              res = nh(parseFloat(s1), parseFloat(s2));
+              break;
+            case "m4":
+              res = ch(parseFloat(s1), parseFloat(s2));
+              break;
+          }
+          out.innerText = res;
+        }
+        // console.log(re);
+        // console.log(type.checked);
+      };
+      function cg(a, b) {
+        return a + b;
+      }
+      function tr(a, b) {
+        return a - b;
+      }
+      function nh(a, b) {
+        return a * b;
+      }
+      function ch(a, b) {
+        const result = b != 0 ? (a / b).toFixed(3) : "b phải khác 0";
+        return result;
+      }
+    </script>
+  </body>
+</html>

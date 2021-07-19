@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3 style="width: 400px; max-width: 100%">
+      Lần lượt di chuyển con trỏ chuột lên hình và ra khỏi hình để xem hiệu ứng
+      đổi hình.
+    </h3>
+    <div
+      id="out"
+      style="width: 300px; overflow: hidden; flex-wrap: nowrap; display: flex"
+    >
+      <img
+        src="http://pngimg.com/uploads/chicken/chicken_PNG2160.png"
+        width="300"
+        alt=""
+      /><img
+        src="https://www.searchpng.com/wp-content/uploads/2019/01/Labrador-dog-PNG.png"
+        width="300"
+        alt=""
+      />
+    </div>
+    <script>
+      const out = document.querySelector("#out");
+      out.onmouseenter = () => {
+        out.firstElementChild.style.display = "none";
+      };
+      out.onmouseleave = () => {
+        out.firstElementChild.style.display = "";
+      };
+    </script>
+  </body>
+</html>

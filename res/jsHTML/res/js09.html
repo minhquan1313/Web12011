@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      flex-flow: column;
+    }
+    h1 {
+      text-transform: uppercase;
+    }
+    body > div {
+      display: flex;
+      align-items: center;
+      width: 400px;
+      max-width: 100%;
+    }
+    body > div > * {
+      flex: 2;
+    }
+    body > div > *:first-child {
+      flex: 1;
+    }
+    button {
+      padding: 4px 8px;
+    }
+  </style>
+  <body>
+    <h1>Thay thế chuỗi</h1>
+    <div id="in">
+      <p>Chuỗi ban đầu:</p>
+      <input type="text" />
+    </div>
+    <div id="replaceBy">
+      <p>Chuỗi bị thay thế:</p>
+      <input type="text" />
+    </div>
+    <div id="toReplace">
+      <p>Chuỗi thay thế:</p>
+      <input type="text" />
+    </div>
+    <div>
+      <div></div>
+      <div>
+        <button onclick="run()">Thực hiện</button>
+      </div>
+    </div>
+
+    <script>
+      // var s = "abcxyz";
+      // console.log(s.replace("b", "dd"));
+      function run() {
+        const out = document.querySelector("#in input");
+        if (out.value) {
+          const str1 = document.querySelector("#replaceBy input");
+          const str2 = document.querySelector("#toReplace input");
+          if (str1.value) {
+            const str = out.value;
+            const str1_ = str1.value;
+            const str2_ = str2.value ? str2.value : "";
+            console.log(str, str1_, str2_);
+            console.log(str.split(str1_).join(str2_));
+            out.value = str.split(str1_).join(str2_);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

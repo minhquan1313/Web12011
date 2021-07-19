@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 align="center">Bảng cửu chương</h1>
+    <table id="out" align="center" border="1" cellpadding="8"></table>
+    <script>
+      const table = document.querySelector("#out");
+      const start = 2;
+      const last = 9;
+      const cols = 4;
+      // ------------------------------------------------------------------------------------------
+      var output;
+      var j = 0;
+      for (var i = start; i <= last; i++) {
+        if (j % cols == 0) {
+          newTr();
+        }
+        newTd(i, output);
+        j++;
+      }
+      function newTr() {
+        const tr = document.createElement("tr");
+        table.appendChild(tr);
+        output = tr;
+      }
+      function newTd(i, output) {
+        var html = "";
+        for (var j = 2; j < 10; j++) {
+          html += `${i} x ${j} = ${i * j}\n`;
+        }
+        const td = document.createElement("td");
+        td.innerText = html;
+        output.appendChild(td);
+      }
+    </script>
+  </body>
+</html>

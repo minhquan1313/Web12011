@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="out"></div>
+    <script>
+      const name = prompt("Tên");
+      const year = prompt("Năm sinh");
+      const out = document.querySelector("#out");
+      const year_now = new Date().getFullYear();
+      if (year && !isNaN(year) && year_now - year >= 0) {
+        out.innerHTML = `Chào bạn: <b>${name}</b>
+          <br>
+         Tuổi của bạn là : <b>${year_now - year}</b>`;
+      } else {
+        out.innerHTML = `Không hợp lệ`;
+      }
+    </script>
+  </body>
+</html>

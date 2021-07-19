@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      h1 {
+        text-align: center;
+      }
+      #textareaDiv {
+        display: flex;
+      }
+      textarea {
+        width: 400px;
+        max-width: 100%;
+        margin: 0 auto;
+        resize: none;
+        padding: 8px;
+        margin-top: 8px;
+      }
+      #form {
+        width: 400px;
+        max-width: 100%;
+        margin: 0 auto;
+        border-bottom: 1px solid #000;
+      }
+      #form > div {
+        display: flex;
+      }
+      #form > div > * {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        border: 1px solid #000;
+        border-bottom: none;
+        padding: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>ĐĂNG KÝ THÀNH VIÊN</h1>
+    <form action="javascript:;" id="form">
+      <div>
+        <p>Tên đăng nhập</p>
+        <input required type="text" id="name" />
+      </div>
+      <div>
+        <p>Mật khẩu</p>
+        <input required type="password" id="pass" />
+      </div>
+      <div>
+        <p>Ngày sinh</p>
+        <input required type="date" id="date" />
+      </div>
+      <div>
+        <p>Giới tính</p>
+        <div>
+          <input type="radio" name="gender" value="Nam" />
+          <label for="m">Nam</label>
+          <input type="radio" name="gender" value="Nữ" />
+          <label for="f">Nữ</label>
+        </div>
+      </div>
+      <div>
+        <p>Vấn đề bạn quan tâm</p>
+        <select id="favo">
+          <option value=""></option>
+          <option value="Kinh tế">Kinh tế</option>
+          <option value="Thể thao">Thể thao</option>
+          <option value="Văn học nghệ thuật">Văn học nghệ thuật</option>
+        </select>
+      </div>
+      <div>
+        <div><button type="submit" id="submit">Đăng ký</button></div>
+        <div><button type="reset" id="cancel">Hủy</button></div>
+      </div>
+    </form>
+    <div id="textareaDiv">
+      <textarea id="out" cols="30" rows="10"></textarea>
+    </div>
+    <script>
+      const out = document.querySelector("#out");
+      document.querySelector("#submit").onclick = () => {
+        const name = document.querySelector("#name").value;
+        const pass = document.querySelector("#pass").value;
+        const date = document.querySelector("#date").value
+          ? new Date(document.querySelector("#date").value).toLocaleDateString()
+          : "";
+        const gender = document.querySelector('input[name="gender"]:checked')
+          ? document.querySelector('input[name="gender"]:checked').value
+          : "";
+        const favo = document.querySelector("#favo").value;
+        // console.log("name = ", name);
+        // console.log("pass = ", pass);
+        // console.log("date = ", date);
+        // console.log("gender = ", gender);
+        // console.log("favo = ", favo);
+
+        var text = ``;
+        if (name) text += `Chào mừng ${name}\n`;
+        if (gender) text += `Bạn là ${gender}\n`;
+        if (pass) text += `Mật khẩu của bạn có ${pass.length} ký tự\n`;
+        if (date) text += `Bạn sinh ngày ${date}\n`;
+        if (favo) text += `Vấn đề bạn quan tâm là ${favo}\n`;
+        out.value = text;
+      };
+      document.querySelector("#cancel").onclick = () => {
+        out.value = "";
+      };
+    </script>
+  </body>
+</html>

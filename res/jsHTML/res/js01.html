@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2 style="text-transform: uppercase">Chương trình tính tuổi</h2>
+    <div>
+      <table>
+        <tr>
+          <td>Nhập vào tên bạn:</td>
+          <td><input type="text" name="" id="name" /></td>
+        </tr>
+        <tr>
+          <td>Nhập vào năm sinh:</td>
+          <td><input type="number" name="" id="year" /></td>
+        </tr>
+      </table>
+    </div>
+    <button>Tính tuổi</button>
+    <div id="out"></div>
+    <script>
+      const name = document.querySelector("#name");
+      const year = document.querySelector("#year");
+      const out = document.querySelector("#out");
+      const year_now = new Date().getFullYear();
+      const btn = document.querySelector("button");
+
+      btn.onclick = () => {
+        const valid = name.value && year.value && year_now - year.value >= 0;
+        if (valid) {
+          out.innerText = `Chào bạn ${name.value}\nTuổi của bạn là ${
+            year_now - year.value
+          }`;
+        } else {
+          out.innerText = "Không hợp lệ";
+        }
+      };
+    </script>
+  </body>
+</html>

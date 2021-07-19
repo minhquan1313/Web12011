@@ -1,4 +1,8 @@
 function start() {
+  const my = 20;
+  const perspective = 600;
+  const mx = my * 2;
+
   const centerX = window.innerWidth / 2;
   const centerY = window.innerHeight / 2;
   const cards = document.querySelectorAll(".practiceItem");
@@ -42,12 +46,13 @@ function start() {
       //rotateY(${-(cardX + x) / 30}deg)
       //   card.style.transform = `rotateX(${(cardY + y) / 10}deg) `;
       const xx = card.offsetLeft + card.offsetWidth / 2 - e.clientX;
-      const yy = card.offsetTop + card.offsetHeight / 2 - (e.clientY + window.scrollY);
-      const my = 30;
-      const mx = my * 2;
+      const yy =
+        card.offsetTop + card.offsetHeight / 2 - (e.clientY + window.scrollY);
 
       // card.style.transform = `perspective(500px) rotateX(${yy / m}deg) rotateY(${-xx / m}deg) `;
-      card.style.transform = `perspective(500px) rotateX(${yy / my}deg) rotateY(${-xx / mx}deg)`;
+      card.style.transform = `perspective(${perspective}px) rotateX(${
+        yy / my
+      }deg) rotateY(${-xx / mx}deg)`;
     });
 
     // console.log(x, y);

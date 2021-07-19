@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      flex-flow: column;
+    }
+    h1 {
+      text-transform: uppercase;
+    }
+    body > div {
+      display: flex;
+      align-items: center;
+      width: 400px;
+      max-width: 100%;
+    }
+    body > div > * {
+      flex: 2;
+    }
+    body > div > *:first-child {
+      flex: 1;
+    }
+    button {
+      padding: 4px 8px;
+    }
+  </style>
+  <body>
+    <h1>String Statistic</h1>
+    <div id="in">
+      <p>String:</p>
+      <input
+        type="text"
+        value="    Lorem ipsum     dolor     sit amet consectetur."
+      />
+    </div>
+    <div>
+      <div></div>
+      <div>
+        <button onclick="run()">Statistic</button>
+      </div>
+    </div>
+    <div>
+      <div></div>
+      <div id="out"></div>
+    </div>
+
+    <script>
+      function run() {
+        const inp = document.querySelector("#in >input");
+        if (inp.value) {
+          const temp = inp.value
+            .toLowerCase()
+            .split(" ")
+            .filter((res) => res != "");
+          const words = temp.length;
+          const str = temp.join("");
+          const characters = inp.value.length;
+          var html = [];
+          console.log(str);
+          var id = 0;
+          for (var i = 0; i < str.length; i++) {
+            const character = str.charAt(i);
+            const isAlphabet =
+              character.toLowerCase() != character.toUpperCase();
+            const isNumber = parseInt(character);
+            if (isAlphabet || isNumber) {
+              // console.log(character);
+              var found = html.find((r) => r.char == character);
+              // console.log(found);
+              if (found) {
+                html[found.id]["amount"] += 1;
+              } else {
+                html.push(new Charac(character, id++));
+              }
+            }
+          }
+          html = html
+            .map((res) => {
+              return `Character '${res.char.toUpperCase()}': ${res.amount}\n`;
+            })
+            .sort()
+            .join("");
+          html = `Characters: ${characters}\nWords: ${words}\n${html}`;
+          console.log(html);
+          out.innerText = html;
+        }
+      }
+      function Charac(c, id) {
+        this.char = c;
+        this.amount = 1;
+        this.id = id;
+      }
+    </script>
+  </body>
+</html>

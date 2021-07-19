@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      margin: 12px;
+    }
+    table {
+      background: #ccc;
+      border: 1px solid #ccc;
+      margin: 0 auto;
+      width: 500px;
+      max-width: 100%;
+    }
+    td {
+      background: wheat;
+      padding: 4px;
+    }
+    input {
+      width: 100%;
+    }
+    button {
+      padding: 4px 8px;
+    }
+    #out {
+      font-weight: bold;
+    }
+  </style>
+  <body>
+    <div style="text-align: center">
+      <h2 style="text-transform: uppercase">
+        chương trình giải phương trình bậc 2
+      </h2>
+      <h3>ax<sup>2</sup> + bx + c = 0</h3>
+    </div>
+    <div>
+      <form action="#">
+        <table cellspacing="1">
+          <tr>
+            <td>a =</td>
+            <td><input type="number" name="" id="a" /></td>
+          </tr>
+          <tr>
+            <td>b =</td>
+            <td><input type="number" name="" id="b" /></td>
+          </tr>
+          <tr>
+            <td>c =</td>
+            <td><input type="number" name="" id="c" /></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <button id="solve">Giải</button> <button type="reset">Xóa</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+    <div id="out"></div>
+    <script>
+      const out = document.querySelector("#out");
+      const btn = document.querySelector("#solve");
+      btn.onclick = () => {
+        const a = document.querySelector("#a").value;
+        const b = document.querySelector("#b").value;
+        const c = document.querySelector("#c").value;
+        console.log(a, b, c);
+        const valid =
+          !isNaN(a) && a != "" && !isNaN(b) && b != "" && !isNaN(c) && c != "";
+        if (valid) {
+          if (a == 0) {
+            out.innerText = "a phải khác 0";
+          } else {
+            const delta = b * b - 4 * a * c;
+            console.log(delta);
+            out.innerText = "";
+            if (delta < 0) {
+              out.innerText = "Vô nghiệm";
+            } else if (delta == 0) {
+              out.innerHTML = `Nghiệm kép x<sub>1</sub> = x<sub>2</sub> = ${
+                -b / (2 * a)
+              }`;
+            } else {
+              const x1 = (-b + Math.sqrt(delta)) / (2 * a);
+              const x2 = (-b - Math.sqrt(delta)) / (2 * a);
+              out.innerHTML = `Phương trình có 2 nghiệm là: <br>
+              x<sub>1</sub> = ${x1.toFixed(2) != 0 ? x1.toFixed(2) : 0}<br>
+              x<sub>2</sub> = ${x2.toFixed(2) != 0 ? x2.toFixed(2) : 0}`;
+            }
+          }
+        } else {
+          out.innerText = "Không hợp lệ";
+        }
+      };
+    </script>
+  </body>
+</html>
