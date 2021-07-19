@@ -8,20 +8,20 @@ function start() {
   const cards = document.querySelectorAll(".practiceItem");
   //   _no_transition();
   //   console.log(cards);
-  setInterval(() => {
-    console.log(window.scrollY);
-  }, 500);
-  cards.forEach((card) => {
-    console.log([card]);
-    //   card.onmouseenter = () => {
-    //     card.setAttribute("style", "");
-    //     card.classList.add("active");
-    //   };
-    //   card.onmouseleave = () => {
-    //     card.classList.remove("active");
-    //     //   setTimeout(() => {}, 300);
-    //   };
-  });
+  // setInterval(() => {
+  //   console.log(window.scrollY);
+  // }, 500);
+  // cards.forEach((card) => {
+  //   console.log([card]);
+  //   card.onmouseenter = () => {
+  //     card.setAttribute("style", "");
+  //     card.classList.add("active");
+  //   };
+  //   card.onmouseleave = () => {
+  //     card.classList.remove("active");
+  //     //   setTimeout(() => {}, 300);
+  //   };
+  // });
   window.addEventListener("mousemove", moving);
 
   //   const card = cards[4];
