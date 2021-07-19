@@ -53,11 +53,11 @@
       function runReverse() {
         const out = document.querySelector("#in input");
         if (out.value) {
-          var arr = out.value.split(" ");
           var str = "";
-          arr.forEach((r, i) => {
-            str = arr[i] + " " + str;
+          var arr = out.value.split(" ").forEach((r) => {
+            str = r == "" ? " " + str : " " + r + str;
           });
+          str = str.substr(1);
           out.value = str;
         }
       }
