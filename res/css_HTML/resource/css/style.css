@@ -344,13 +344,13 @@ footer.dark .footerBtn i {
 
 .practiceItem::after {
   position: absolute;
-  bottom: -2px;
+  bottom: -8px;
   left: 0;
   right: 0;
   height: 8px;
-  background-image: -webkit-gradient(linear, left top, right top, from(#6a11cb), color-stop(#2575fc), to(#6a11cb));
-  background-image: linear-gradient(to right, #6a11cb, #2575fc, #6a11cb);
-  background-size: 300px 2px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#9c4f96), color-stop(#ff6355), color-stop(#fba949), color-stop(#fae442), color-stop(#8bd448), color-stop(#2aa8f2), to(#9c4f96));
+  background-image: linear-gradient(to right, #9c4f96, #ff6355, #fba949, #fae442, #8bd448, #2aa8f2, #9c4f96);
+  background-size: 300px 4px;
   background-position: left bottom;
   background-repeat: repeat-x;
   content: "";
