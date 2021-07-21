@@ -444,10 +444,11 @@ footer.dark .footerBtn i {
   }
 }
 
-@media (min-width: 740px) and (max-width: 1023px) {
+@media (max-width: 1023px) {
   .practiceList {
     -ms-grid-columns: (auto)[3];
         grid-template-columns: repeat(3, auto);
+    row-gap: 4px;
   }
   .practiceItem:hover {
     -webkit-transform: none;
@@ -480,11 +481,10 @@ footer.dark .footerBtn i {
             box-shadow: unset;
   }
   .practiceList {
-    padding: 0;
     -ms-grid-columns: (auto)[1];
         grid-template-columns: repeat(1, auto);
+    padding: 0;
     margin-top: 0;
-    row-gap: 4px;
   }
   .practiceItem {
     border-radius: 0;

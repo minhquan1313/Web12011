@@ -336,10 +336,11 @@ footer.dark .footerBtn i {
   }
 }
 
-@media (min-width: 740px) and (max-width: 1023px) {
+@media (max-width: 1023px) {
   .practiceList {
     -ms-grid-columns: (auto)[3];
         grid-template-columns: repeat(3, auto);
+    row-gap: 4px;
   }
 }
 
@@ -360,7 +361,6 @@ footer.dark .footerBtn i {
     -ms-grid-columns: (auto)[1];
         grid-template-columns: repeat(1, auto);
     margin-top: 0;
-    row-gap: 4px;
   }
   .practiceItem {
     border-radius: 0;
