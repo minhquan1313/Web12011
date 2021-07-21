@@ -1,4 +1,4 @@
-function start() {
+function card_rotate_on_mousemove() {
   const my = 20;
   const perspective = 600;
   const mx = my * 2;
@@ -62,6 +62,56 @@ function isMobile() {
     return true;
   else return false;
 }
+function newMouse() {
+  // const myMouse=
+  const myMouse = document.createElement("div");
+  myMouse.id = "binhMouse";
+  myMouse.innerHTML = `
+  <div class="pt100">
+    <div class="binhMouse_circle"></div>
+  </div>
+  <style>
+    #binhMouse {
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      transform: translate(-50%, -50%);
+      z-index: 999;
+      width: 30px;
+      pointer-events: none;
+    }
+    .pt100 {
+      padding-top: 100%;
+    }
+    .binhMouse_circle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 50%;
+      box-sizing: border-box;
+      animation: binhMouse 1s linear infinite alternate;
+    }
+    @keyframes binhMouse {
+      from {
+        border: 8px solid #00c6fb;
+      }
+      to {
+        border: 4px solid #005bea;
+      }
+    }    
+    *{
+      cursor: none;
+    }
+  </style>`;
+  document.body.appendChild(myMouse);
+  document.body.onmousemove = (e) => {
+    myMouse.style.top = `${e.clientY}px`;
+    myMouse.style.left = `${e.clientX}px`;
+  };
+}
 if (!isMobile()) {
-  start();
+  newMouse();
+  card_rotate_on_mousemove();
 }
