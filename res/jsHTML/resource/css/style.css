@@ -349,9 +349,21 @@ footer.dark .footerBtn i {
 }
 
 @media (max-width: 460px) {
+  .header {
+    -webkit-box-shadow: unset;
+            box-shadow: unset;
+  }
   .practiceList {
+    padding: 0;
     -ms-grid-columns: (auto)[1];
         grid-template-columns: repeat(1, auto);
+    margin-top: 0;
+    row-gap: 4px;
+  }
+  .practiceItem {
+    border-radius: 0;
+    -webkit-box-shadow: unset;
+            box-shadow: unset;
   }
 }
 /*# sourceMappingURL=style.css.map */

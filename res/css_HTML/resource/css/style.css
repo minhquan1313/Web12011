@@ -131,15 +131,6 @@ footer.dark .footerBtn i {
   }
 }
 
-::-webkit-scrollbar {
-  width: 0;
-}
-
-#main {
-  background: #252525;
-  color: #ccc;
-}
-
 .header {
   position: fixed;
   z-index: 99;
@@ -157,9 +148,9 @@ footer.dark .footerBtn i {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
-  background: #252525;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
 }
 
 .header__title {
@@ -167,15 +158,74 @@ footer.dark .footerBtn i {
   font-size: 28px;
   text-transform: uppercase;
   font-weight: bold;
-  text-shadow: 4px 0 8px rgba(0, 0, 0, 0.9);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
 }
 
+.header__title p {
+  position: relative;
+}
+
 .header__title ::before {
-  content: "_";
+  color: #fff;
+  content: attr(t);
+  -webkit-text-stroke: 0.5px rgba(204, 204, 204, 0.5);
+}
+
+.header__title ::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: attr(t);
+  color: #595959;
+  width: 0%;
+  border-right: 1px solid transparent;
+  overflow: hidden;
+  -webkit-animation: header_title 2s linear alternate infinite;
+          animation: header_title 2s linear alternate infinite;
+}
+
+@-webkit-keyframes header_title {
+  5% {
+    width: 5%;
+  }
+  10% {
+    border-color: rgba(204, 204, 204, 0.5);
+    width: 10%;
+  }
+  90% {
+    border-color: rgba(204, 204, 204, 0.5);
+    width: 100%;
+  }
+  95% {
+    width: 100%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes header_title {
+  5% {
+    width: 5%;
+  }
+  10% {
+    border-color: rgba(204, 204, 204, 0.5);
+    width: 10%;
+  }
+  90% {
+    border-color: rgba(204, 204, 204, 0.5);
+    width: 100%;
+  }
+  95% {
+    width: 100%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 .back {
@@ -185,11 +235,8 @@ footer.dark .footerBtn i {
   line-height: 52px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-}
-
-.back:hover {
-  -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
-          box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
+  color: #595959;
+  border: 1px solid transparent;
 }
 
 .back:hover i {
@@ -216,6 +263,15 @@ footer.dark .footerBtn i {
   will-change: width;
   -webkit-box-sizing: unset;
           box-sizing: unset;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+#main {
+  background: #f0f0f0;
+  color: #ccc;
 }
 
 .practiceWrapper {
@@ -249,18 +305,28 @@ footer.dark .footerBtn i {
   position: relative;
   width: 100%;
   border-radius: 8px;
-  -webkit-perspective: 500px;
-          perspective: 500px;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-box-shadow: 0 0 10px black;
-          box-shadow: 0 0 10px black;
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
   overflow: hidden;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.practiceItem:hover {
+  -webkit-transform: perspective(300px) rotateX(10deg) rotateY(10deg);
+          transform: perspective(300px) rotateX(10deg) rotateY(10deg);
 }
 
 .practiceItem:hover .pt .practice__Name-card {
   width: 100%;
   text-align: center;
+}
+
+.practiceItem:hover .pt .practiceName {
+  -webkit-transform: perspective(300px) rotateX(-10deg) rotateY(10deg);
+          transform: perspective(300px) rotateX(-10deg) rotateY(10deg);
   font-size: 32px;
 }
 
@@ -268,7 +334,7 @@ footer.dark .footerBtn i {
   padding-top: 50%;
 }
 
-.practiceItem .pt .practice__Name-card {
+.practiceItem .practice__Name-card {
   position: absolute;
   top: 0;
   left: 0;
@@ -285,13 +351,13 @@ footer.dark .footerBtn i {
   padding: 20px;
   width: 90px;
   font-size: 20px;
-  color: rgba(0, 0, 0, 0.2);
+  color: rgba(255, 255, 255, 0.1);
   background: currentColor;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-.practiceItem .pt .practice__Name-card::after {
+.practiceItem .practice__Name-card::after {
   position: absolute;
   left: 100%;
   top: 0;
@@ -303,7 +369,9 @@ footer.dark .footerBtn i {
           clip-path: polygon(0 0, 50% 50%, 0 100%);
 }
 
-.practiceItem .pt .practice__Name-card .practiceName {
+.practiceItem .practice__Name-card .practiceName {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   color: #fff;
 }
 
@@ -340,6 +408,14 @@ footer.dark .footerBtn i {
     -ms-grid-columns: (auto)[3];
         grid-template-columns: repeat(3, auto);
   }
+  .practiceItem:hover {
+    -webkit-transform: none;
+            transform: none;
+  }
+  .practiceItem:hover .pt .practiceName {
+    -webkit-transform: none;
+            transform: none;
+  }
 }
 
 @media (max-width: 739px) {
@@ -347,12 +423,32 @@ footer.dark .footerBtn i {
     -ms-grid-columns: (auto)[2];
         grid-template-columns: repeat(2, auto);
   }
+  .practiceItem:hover {
+    -webkit-transform: none;
+            transform: none;
+  }
+  .practiceItem:hover .pt .practiceName {
+    -webkit-transform: none;
+            transform: none;
+  }
 }
 
 @media (max-width: 460px) {
+  .header {
+    -webkit-box-shadow: unset;
+            box-shadow: unset;
+  }
   .practiceList {
+    padding: 0;
     -ms-grid-columns: (auto)[1];
         grid-template-columns: repeat(1, auto);
+    margin-top: 0;
+    row-gap: 4px;
+  }
+  .practiceItem {
+    border-radius: 0;
+    -webkit-box-shadow: unset;
+            box-shadow: unset;
   }
 }
 /*# sourceMappingURL=style.css.map */
