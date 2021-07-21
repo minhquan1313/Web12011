@@ -13,8 +13,12 @@ function card_rotate_on_mousemove() {
   // }, 500);
 
   const trackBtn = createBtn(".header__title");
-  trackBtn.onclick = (e) => {
-    window.addEventListener("mousemove", moving);
+  window.addEventListener("mousemove", moving);
+  trackBtn.onclick = () => {
+    window.removeEventListener("mousemove", moving);
+    for (var i of cards) {
+      i.setAttribute("style", "transition:.3s");
+    }
     trackBtn.remove();
   };
   //   const card = cards[4];
@@ -58,7 +62,7 @@ function card_rotate_on_mousemove() {
       "style",
       "width:fit-content;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);font-size: 12px;"
     );
-    btn.innerText = "click để kích hoạt hiệu ứng";
+    btn.innerText = "click để tắt hiệu ứng";
     document.querySelector(id).appendChild(btn);
     return btn;
   }
@@ -93,7 +97,7 @@ function newMouse() {
     myMouse.style.left = `${e.clientX}px`;
   };
 }
-if (!isMobile()) {
-  newMouse();
-  card_rotate_on_mousemove();
-}
+// if (!isMobile()) {
+newMouse();
+card_rotate_on_mousemove();
+// }

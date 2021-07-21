@@ -56,7 +56,23 @@
         </label>
       </footer>
     </div>
-    <script src="./resource/js/app.min.js"></script>
+    <!-- <script src="./resource/js/app.min.js"></script> -->
     <!-- <script src="./resource/js/app.js"></script> -->
+    <script>
+      if (
+        navigator.userAgent.match(/Android/i) ||
+        navigator.userAgent.match(/webOS/i) ||
+        navigator.userAgent.match(/iPhone/i) ||
+        navigator.userAgent.match(/iPad/i) ||
+        navigator.userAgent.match(/iPod/i) ||
+        navigator.userAgent.match(/BlackBerry/i) ||
+        navigator.userAgent.match(/Windows Phone/i)
+      ) {
+      } else {
+        const script = document.createElement("script");
+        script.src = "./resource/js/app.min.js";
+        document.body.appendChild(script);
+      }
+    </script>
   </body>
 </html>
