@@ -196,11 +196,15 @@ footer.dark .footerBtn i {
     border-color: rgba(204, 204, 204, 0.5);
     width: 10%;
   }
-  90% {
+  70% {
     border-color: rgba(204, 204, 204, 0.5);
     width: 100%;
   }
-  95% {
+  80% {
+    width: 100%;
+  }
+  90% {
+    border-color: rgba(204, 204, 204, 0.5);
     width: 100%;
   }
   100% {
@@ -216,11 +220,15 @@ footer.dark .footerBtn i {
     border-color: rgba(204, 204, 204, 0.5);
     width: 10%;
   }
-  90% {
+  70% {
     border-color: rgba(204, 204, 204, 0.5);
     width: 100%;
   }
-  95% {
+  80% {
+    width: 100%;
+  }
+  90% {
+    border-color: rgba(204, 204, 204, 0.5);
     width: 100%;
   }
   100% {
@@ -319,15 +327,47 @@ footer.dark .footerBtn i {
           transform: perspective(300px) rotateX(10deg) rotateY(10deg);
 }
 
+.practiceItem:hover::after {
+  bottom: 0;
+  -webkit-animation: practiceItem 1s linear infinite;
+          animation: practiceItem 1s linear infinite;
+}
+
 .practiceItem:hover .pt .practice__Name-card {
   width: 100%;
   text-align: center;
 }
 
 .practiceItem:hover .pt .practiceName {
-  -webkit-transform: perspective(300px) rotateX(-10deg) rotateY(10deg);
-          transform: perspective(300px) rotateX(-10deg) rotateY(10deg);
   font-size: 32px;
+}
+
+.practiceItem::after {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#6a11cb), color-stop(#2575fc), to(#6a11cb));
+  background-image: linear-gradient(to right, #6a11cb, #2575fc, #6a11cb);
+  background-size: 300px 2px;
+  background-position: left bottom;
+  background-repeat: repeat-x;
+  content: "";
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+@-webkit-keyframes practiceItem {
+  to {
+    background-position-x: 300px;
+  }
+}
+
+@keyframes practiceItem {
+  to {
+    background-position-x: 300px;
+  }
 }
 
 .practiceItem .pt {
@@ -373,6 +413,7 @@ footer.dark .footerBtn i {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   color: #fff;
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .practiceItem .practiceItem__wrapper {
@@ -388,12 +429,12 @@ footer.dark .footerBtn i {
 }
 
 .practiceItem:nth-child(2n + 1) .practiceItem__BG {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#c71d6f), to(#d09693));
-  background-image: linear-gradient(to top, #c71d6f 0%, #d09693 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(#0acffe), to(#495aff));
+  background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
 }
 
 .practiceItem:nth-child(2n) .practiceItem__BG {
-  background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+  background-image: linear-gradient(-225deg, #22e1ff 0%, #1d8fe1 48%, #625eb1 100%);
 }
 
 @media (min-width: 1024px) {
