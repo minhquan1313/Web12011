@@ -27,7 +27,7 @@
           <input type="radio" name="math" id="m2" />
           <label for="m2">Trừ</label>
           <input type="radio" name="math" id="m3" />
-          <label for="m1">Nhân</label>
+          <label for="m3">Nhân</label>
           <input type="radio" name="math" id="m4" />
           <label for="m4">Chia</label>
         </td>
@@ -42,7 +42,7 @@
       document.querySelector("button").onclick = () => {
         const s1 = document.querySelector("#s1").value;
         const s2 = document.querySelector("#s2").value;
-        const valid = s1 != "" && s1 != "";
+        const valid = s1 != "" && s2 != "";
         if (valid) {
           const type = document.querySelectorAll("input[name=math]");
           var id = "";

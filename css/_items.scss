@@ -1,3 +1,4 @@
+@import "myvar";
 .items {
   position: relative;
   margin: auto;
@@ -40,7 +41,7 @@
       // background: #8640e1;
       color: #fff;
     }
-    .item__img {
+    .pt50 {
       &::after {
         content: "";
         position: absolute;
@@ -48,23 +49,73 @@
         left: 0;
         right: 0;
         height: 20%;
-        background: linear-gradient(to top, #6370e4 0%, #6370e4 30%, transparent);
+        background: linear-gradient(
+          to top,
+          #6370e4 0%,
+          #6370e4 30%,
+          transparent
+        );
+      }
+    }
+  }
+}
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+  background: $brightColorBg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  > div {
+    position: relative;
+    width: 10%;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      padding-top: 100%;
+      border-radius: 50%;
+      border: 6px solid #0acffe;
+      // ...
+      border-width: 0 2px;
+      transform: translateY(-50%);
+      animation: loader 1s infinite;
+      @keyframes loader {
+        to {
+          transform: translateY(-50%) rotate(360deg);
+        }
       }
     }
   }
 }
 .item__cover {
+  position: relative;
   border-radius: 12px;
   overflow: hidden;
   position: relative;
   transition: 0.3s;
 }
 .item__img {
-  position: relative;
-  padding-top: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // padding-top: 50%;
   background-size: cover;
   background-position: center;
+  object-fit: cover;
+  object-position: center;
   transition: 0.3s;
+}
+.pt50 {
+  position: relative;
+  padding-top: 50%;
+  height: 0;
 }
 .item__name {
   position: relative;
