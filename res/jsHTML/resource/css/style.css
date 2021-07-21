@@ -174,11 +174,13 @@ footer.dark .footerBtn i {
           user-select: none;
 }
 
-.header__title ::before {
-  content: "_";
-}
-
 .back {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0 16px;
   margin-left: auto;
   height: 100%;
@@ -364,6 +366,14 @@ footer.dark .footerBtn i {
     border-radius: 0;
     -webkit-box-shadow: unset;
             box-shadow: unset;
+  }
+  .back a p {
+    display: none;
+  }
+  .back a i {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
 }
 /*# sourceMappingURL=style.css.map */

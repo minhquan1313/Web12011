@@ -11,8 +11,12 @@ function card_rotate_on_mousemove() {
   // setInterval(() => {
   //   console.log(window.scrollY);
   // }, 500);
-  window.addEventListener("mousemove", moving);
 
+  const trackBtn = createBtn();
+  trackBtn.onclick = (e) => {
+    window.addEventListener("mousemove", moving);
+    trackBtn.remove();
+  };
   //   const card = cards[4];
   //   console.log(card.offsetLeft);
   //   cards.forEach((card, i) => {
@@ -48,6 +52,16 @@ function card_rotate_on_mousemove() {
     // console.log(e.clientX, e.clientY);
     // console.log(y);
   }
+  function createBtn() {
+    const btn = document.createElement("div");
+    btn.setAttribute(
+      "style",
+      "width:fit-content;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);font-size: 12px;"
+    );
+    btn.innerText = "click để kích hoạt hiệu ứng";
+    document.querySelector(".header__title").appendChild(btn);
+    return btn;
+  }
 }
 function isMobile() {
   if (
@@ -71,43 +85,11 @@ function newMouse() {
     <div class="binhMouse_circle"></div>
   </div>
   <style>
-    #binhMouse {
-      position: absolute;
-      top: 50px;
-      left: 50px;
-      transform: translate(-50%, -50%);
-      z-index: 999;
-      width: 30px;
-      pointer-events: none;
-    }
-    .pt100 {
-      padding-top: 100%;
-    }
-    .binhMouse_circle {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      border-radius: 50%;
-      box-sizing: border-box;
-      animation: binhMouse 1s linear infinite alternate;
-    }
-    @keyframes binhMouse {
-      from {
-        border: 8px solid #00c6fb;
-      }
-      to {
-        border: 4px solid #005bea;
-      }
-    }    
-    *{
-      cursor: none;
-    }
+  #binhMouse{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:999;width:30px;pointer-events:none}.pt100{padding-top:100%}.binhMouse_circle{position:absolute;top:0;left:0;right:0;bottom:0;border-radius:50%;box-sizing:border-box;border:5px solid #00c6fb;animation:binhMouse 1s linear infinite alternate}@keyframes binhMouse{from{border-color:#c71d6f}to{border-color:#d09693;top:20%;left:20%;right:20%;bottom:20%}}*{cursor:none}
   </style>`;
   document.body.appendChild(myMouse);
   document.body.onmousemove = (e) => {
-    myMouse.style.top = `${e.clientY}px`;
+    myMouse.style.top = `${e.clientY + window.scrollY}px`;
     myMouse.style.left = `${e.clientX}px`;
   };
 }
