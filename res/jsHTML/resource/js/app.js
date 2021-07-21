@@ -12,7 +12,7 @@ function card_rotate_on_mousemove() {
   //   console.log(window.scrollY);
   // }, 500);
 
-  const trackBtn = createBtn();
+  const trackBtn = createBtn(".header__title");
   trackBtn.onclick = (e) => {
     window.addEventListener("mousemove", moving);
     trackBtn.remove();
@@ -52,14 +52,14 @@ function card_rotate_on_mousemove() {
     // console.log(e.clientX, e.clientY);
     // console.log(y);
   }
-  function createBtn() {
+  function createBtn(id) {
     const btn = document.createElement("div");
     btn.setAttribute(
       "style",
       "width:fit-content;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);font-size: 12px;"
     );
     btn.innerText = "click để kích hoạt hiệu ứng";
-    document.querySelector(".header__title").appendChild(btn);
+    document.querySelector(id).appendChild(btn);
     return btn;
   }
 }
