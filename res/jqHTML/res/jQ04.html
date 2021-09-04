@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .inline {
+        display: inline-block;
+      }
+      .blue {
+        background: blue;
+      }
+      .red {
+        background: red;
+      }
+      .violet {
+        background: violet;
+      }
+      .green {
+        background: green;
+      }
+      .colorBox {
+        width: 100px;
+        height: 100px;
+      }
+      #demo {
+        color: red;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="name inline">Click lên các hình vuông:</div>
+    <div class="">
+      <div class="inline colorBox blue" colorName="Xanh dương"></div>
+      <div class="inline colorBox red" colorName="Đỏ"></div>
+      <div class="inline colorBox violet" colorName="Hồng"></div>
+      <div class="inline colorBox green" colorName="Xanh lá"></div>
+    </div>
+    <div id="demo"></div>
+
+    <script src="./jquery.min.js"></script>
+    <script>
+      const demo = $("#demo");
+
+      $(".colorBox").on("click", clickFunc);
+      // $(".colorBox").on("click", (e) => {
+      //   $(this).css("background");
+      //   // console.log();
+      // });
+
+      function clickFunc(e) {
+        // console.log(this);
+        let rgb = window.getComputedStyle(this).backgroundColor;
+        // console.log(window.getComputedStyle(this).backgroundColor);
+        addCourse(`${this.getAttribute("colorName")}: ${rgb}`);
+        // console.log($(this).css(""));
+        // $(this).css('');
+      }
+
+      function addCourse(message) {
+        demo.html(`Màu bạn chọn là ${message}`);
+      }
+    </script>
+  </body>
+</html>

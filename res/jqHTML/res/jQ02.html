@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .inline {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="javascript:;">
+      <div class="name inline">Từ ngày</div>
+      <input type="date" name="" id="contentInp1" class="inline" />
+      <div></div>
+      <div class="name inline">Đến ngày</div>
+      <input type="date" name="" id="contentInp2" class="inline" />
+      <button type="submit">Tính số ngày</button>
+    </form>
+    <div id="demo"></div>
+
+    <script src="./jquery.min.js"></script>
+    <script>
+      const demo = $("#demo");
+      // const inp = $("input");
+      const from = $("#contentInp1");
+      const to = $("#contentInp2");
+      const btn = $("button");
+      btn.on("click", (d) => {
+        // console.log(from.val(), to.val());
+        // console.log(from.val() - to.val());
+        if (from.val() && to.val()) {
+          let day = new Date(new Date(to.val()) - new Date(from.val())).getTime() / 1000 / 60 / 60 / 24;
+          // console.log(day);
+          addCourse(`Số ngày là: ${day}`);
+          // let from_ = new Date(from.val()).;
+          // let to_ = new Date(to.val());
+        }
+      });
+      function addCourse(message) {
+        // $("<p>", {
+        //   text: message,
+        // }).appendTo(demo);
+        demo.html(message);
+      }
+    </script>
+  </body>
+</html>

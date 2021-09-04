@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .inline {
+        display: inline-block;
+      }
+      tr {
+        border-collapse: collapse;
+        border: 1px solid orange;
+        /* background: red; */
+      }
+      .wrapper {
+        display: flex;
+        justify-content: center;
+      }
+      .wrapper__center {
+        width: 500px;
+        max-width: 100%;
+      }
+      .row {
+        display: flex;
+        justify-content: space-evenly;
+        /* border: 1px solid #000; */
+      }
+      .col {
+        border: 0px solid orange;
+        border-width: 0 0 1px 1px;
+        padding: 4px 16px;
+        flex: 1;
+      }
+      .col:first-child {
+        flex: 2;
+      }
+      .col:last-child {
+        border-right-width: 1px;
+      }
+      .bd--green {
+        border: 1px solid greenyellow;
+        background: #f0f8ff;
+      }
+      h1 {
+        text-transform: uppercase;
+      }
+      .bold {
+        font-weight: bold;
+      }
+      .center {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 align="center">Bảng giá vật tư</h1>
+    <div class="wrapper">
+      <div class="wrapper__center">
+        <div class="row">
+          <p class="col bold bd--green center">Tên vật tư</p>
+          <p class="col bold bd--green center">Đơn vị tính</p>
+          <p class="col bold bd--green center">Đơn giá</p>
+        </div>
+        <div class="row">
+          <p class="col">Cát</p>
+          <p class="col">Khối</p>
+          <p class="col">77,000</p>
+        </div>
+        <div class="row">
+          <p class="col">Đá</p>
+          <p class="col">Khối</p>
+          <p class="col">90,000</p>
+        </div>
+        <div class="row">
+          <p class="col">Xi măng Hà Tiên loại 1</p>
+          <p class="col">Bao</p>
+          <p class="col">120,000</p>
+        </div>
+        <div class="row">
+          <p class="col">Xi măng Hà Tiên loại 2</p>
+          <p class="col">Bao</p>
+          <p class="col">100,000</p>
+        </div>
+        <div class="">
+          <button class="inline" id="change">Đổi màu nền</button>
+          <button class="inline" id="reset">Màu nền mặc định</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./jquery.min.js"></script>
+    <script>
+      const color = "#FF0066";
+      $("#change").on("click", change);
+      $("#reset").on("click", reset);
+      function change() {
+        $(".row:odd>.col").css("background", color);
+      }
+      function reset() {
+        $(".row:odd>.col").css("background", "");
+      }
+    </script>
+  </body>
+</html>

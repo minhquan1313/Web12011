@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* .inline {
+        display: inline-block;
+      } */
+      img {
+        width: 400px;
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="https://dogtime.com/assets/uploads/2011/03/puppy-development.jpg" alt="" id="demo" />
+
+    <script src="./jquery.min.js"></script>
+    <script>
+      $("img").on({ mouseenter: hv, mouseleave: lv });
+
+      function hv() {
+        $(this).css("transform", "scale(1.5)");
+        console.log($(this));
+      }
+      function lv() {
+        $(this).css("transform", "");
+        console.log($(this));
+      }
+    </script>
+  </body>
+</html>

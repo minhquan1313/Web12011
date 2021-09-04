@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .inline {
+        display: inline-block;
+      }
+      .box {
+        border: 1px solid #000;
+        background: red;
+        width: 300px;
+        height: 150px;
+        max-width: 100%;
+      }
+      .btns {
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <div class="btns"><button>Move right</button><button>Move left</button><button>Move up</button><button>Move down</button></div>
+    <script src="./jquery.min.js"></script>
+    <script>
+      const box = $(".box");
+      var currentPos = { x: 0, y: 0 };
+      const movePx = {
+        up: 10,
+        down: -10,
+        left: -10,
+        right: 10,
+      };
+      const translateXY = {
+        up: "translateY",
+        down: "translateY",
+        right: "translateX",
+        left: "translateX",
+      };
+
+      $("button").on("click", move);
+
+      function move() {
+        let text = $(this).text();
+        let direction = $.trim(text).substr(text.indexOf(" ") + 1);
+        let amount = movePx[direction];
+        // let down = false;
+
+        let finalD = translateXY[direction];
+
+        if (finalD == "translateY") {
+          currentPos.y += amount;
+        } else {
+          currentPos.x += amount;
+        }
+
+        // $(box).css("transform", `${finalD}(${down ? currentPos.y : currentPos.x}px)`);
+        $(box).css("transform", `translateX(${currentPos.x}px) translateY(${currentPos.y}px)`);
+      }
+    </script>
+  </body>
+</html>

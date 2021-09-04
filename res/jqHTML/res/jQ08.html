@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: #faebd7;
+      }
+      .inline {
+        display: inline-block;
+      }
+
+      .main {
+        display: flex;
+      }
+      .side {
+        flex: 1;
+      }
+      .center {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 5vw;
+        text-transform: uppercase;
+      }
+      .contents {
+      }
+      .content {
+      }
+      form {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+      }
+      form > * {
+        margin: 8px 0;
+        padding-left: 14px;
+        /* padding: 0 8px; */
+      }
+      .lable {
+      }
+      .borderMask {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        border: 1px solid blue;
+        z-index: -1;
+      }
+      button {
+        /* padding: 8px 0; */
+        margin: 8px;
+      }
+      ol > li:nth-child(2n) {
+        background: #99ffff;
+      }
+      ol > li:nth-child(2n + 1) {
+        background: #996699;
+      }
+      ol {
+        margin: 12px 8px;
+        text-transform: uppercase;
+      }
+      .lable {
+        margin-left: 8px;
+        display: block;
+        width: fit-content;
+        background: #faebd7;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="side">
+        <div class="contents">
+          <div class="content">
+            <form action="javascript:;">
+              <p class="lable">Chọn</p>
+              <label> <input type="radio" checked name="fontType" id="fontNormal" />Chữ bình thường</label>
+              <label><input type="radio" name="fontType" id="fontShadow" />Chữ có bóng</label>
+              <label>Chọn màu chữ: <input type="color" name="color" id="color" /></label>
+
+              <div class="">
+                <button id="deleteLast">Xóa phần tử cuối</button>
+                <button id="reset">Phục hồi</button>
+              </div>
+              <div class="borderMask"></div>
+            </form>
+          </div>
+          <div class="content">
+            <form action="javascript:;">
+              <p class="lable">Click vào một chuỗi</p>
+              <ol>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JQUery</li>
+                <li>javascript</li>
+              </ol>
+
+              <div class="borderMask"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="side">
+        <div class="center">
+          <p>HTML</p>
+        </div>
+      </div>
+    </div>
+    <script src="./jquery.min.js"></script>
+    <script>
+      // const demo = $("#demo");
+      // const inp = $("input");
+      // const btn = $("button");
+      // btn.on("click", (d) => {
+      //   let value = $.trim(inp.val());
+      //   if (value) addCourse(value);
+      // });
+      // function addCourse(message) {
+      //   $("<li>", {
+      //     text: message,
+      //   }).appendTo(demo);
+      // }
+
+      $("form ol > li").on("click", clickFunc);
+      $('input[name="fontType"]').on("click", fontTypeFunc);
+      $('input[name="color"]').on("input", colorFunc);
+      $("#reset").on("click", updateAll);
+      $("#deleteLast").on("click", (e) => {
+        $("ol>li:last-child").remove();
+      });
+
+      function updateAll() {
+        $("ol").html(`<li>HTML</li>
+                <li>CSS</li>
+                <li>JQUery</li>
+                <li>javascript</li>`);
+        // $(".center>p").css("color", "#000");
+        // $(".center>p").css("text-shadow", "");
+      }
+
+      function colorFunc() {
+        // console.log($(this).val());
+        $(".center>p").css("color", $('input[name="color"]').val());
+        // console.log(this.value);
+      }
+      function fontTypeFunc() {
+        console.log($(this));
+        let type = $(this).attr("id");
+        if (type == "fontShadow") {
+          $(".center>p").css("text-shadow", "8px 8px 8px #000");
+        } else {
+          $(".center>p").css("text-shadow", "");
+        }
+      }
+
+      function clickFunc() {
+        $(".center>p").html($(this).text());
+      }
+    </script>
+  </body>
+</html>
