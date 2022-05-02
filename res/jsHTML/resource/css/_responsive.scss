@@ -1,0 +1,43 @@
+// PC
+@media (min-width: 1024px) {
+  .practiceList {
+    grid-template-columns: repeat(4, auto);
+  }
+}
+// Tablet
+@media (max-width: 1023px) {
+  .practiceList {
+    grid-template-columns: repeat(3, auto);
+    row-gap: 4px;
+  }
+}
+// Mobile B
+@media (max-width: 739px) {
+  .practiceList {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+// Mobile S
+@media (max-width: 460px) {
+  .header {
+    box-shadow: unset;
+  }
+  .practiceList {
+    padding: 0;
+    grid-template-columns: repeat(1, auto);
+    margin-top: 0;
+  }
+  .practiceItem {
+    border-radius: 0;
+    box-shadow: unset;
+  }
+  .back a p {
+    display: none;
+  }
+  .back a i {
+    width: fit-content;
+  }
+}
+// Mobile Ss
+@media (max-width: 320px) {
+}

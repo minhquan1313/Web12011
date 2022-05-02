@@ -1,0 +1,123 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: $darkColorText;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  .footer_wrapper {
+    height: $footerHeight;
+    display: flex;
+    flex-flow: row wrap;
+    background: #fff;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    user-select: none;
+    transition: 0.3s;
+    > * {
+      padding: 0 $baseSpacing;
+      line-height: $footerHeight;
+      white-space: nowrap;
+    }
+    > * + * {
+      border-left: 1px solid #ccc;
+    }
+  }
+  .footerBtn {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    user-select: none;
+    i {
+      display: block;
+      font-size: 28px;
+      color: currentColor;
+      background: #fff;
+      border-radius: 50%;
+      transition: 0.3s;
+      margin-bottom: $baseSpacing;
+      transform: rotate(180deg * 3);
+    }
+  }
+  #school {
+    span {
+      animation: school 0.3s infinite alternate;
+      @keyframes school {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  #name {
+    margin-left: auto;
+  }
+  #myId {
+  }
+  #footerBtn_checkbox {
+    display: none;
+    ~ .footerBtn {
+      i {
+        // display: block;
+        // width: 100%;
+        // text-align: center;
+        // transform: rotate(0deg);
+        // transition: 0.3s;
+        // animation: footerBtn 1s 0.4s infinite linear;
+        // @keyframes footerBtn {
+        //   0% {
+        //     transform: rotate(0deg);
+        //   }
+        //   33% {
+        //     transform: rotate(10deg);
+        //   }
+        //   66% {
+        //     transform: rotate(-10deg);
+        //   }
+        //   100% {
+        //     transform: rotate(0deg);
+        //   }
+        // }
+      }
+    }
+    &:checked {
+      ~ .footerBtn {
+        i {
+          // color: red;
+          transform: rotate(0);
+        }
+      }
+      ~ .footer_wrapper {
+        height: 0;
+      }
+    }
+  }
+
+  &.dark {
+    color: $brightColorText;
+    .footer_wrapper {
+      background: $darkColorBg;
+      box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.4);
+      > * + * {
+        border-left: 1px solid $darkColorText;
+      }
+    }
+    .footerBtn {
+      i {
+        box-shadow: 0 0 6px rgb(0, 0, 0);
+        background: $darkColorBg;
+      }
+    }
+  }
+}
+@media (max-width: 1023px) {
+  .footer_wrapper {
+    height: $footerHeight !important;
+  }
+  .footerBtn {
+    display: none;
+  }
+}

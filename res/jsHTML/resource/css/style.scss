@@ -1,0 +1,199 @@
+@import "myvar";
+@import "footer";
+::-webkit-scrollbar {
+  width: 0;
+}
+#main {
+  background: $darkColorBg;
+  color: $brightColorText;
+  // height: 100vh;
+}
+
+.header {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $headerHeight;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  // border-bottom: 1px solid #00a8ff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+  background: $darkColorBg;
+  // background: #00a8ff;
+}
+.header__title {
+  padding: 0 $baseSpacing * 2;
+  font-size: 28px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 4px 0 8px rgba(0, 0, 0, 0.9);
+  user-select: none;
+}
+.back {
+  display: flex;
+  align-items: center;
+  // background: #fff;
+  padding: 0 $baseSpacing * 2;
+  margin-left: auto;
+  height: 100%;
+  line-height: $headerHeight;
+  transition: 0.3s;
+  &:hover {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
+    // color: #fff;
+    i {
+      width: 32px;
+    }
+  }
+  a {
+    display: flex;
+    align-items: center;
+    i {
+      display: block;
+      width: 0;
+      overflow: hidden;
+      font-size: 32px;
+      padding-left: $baseSpacing;
+      transition: 0.3s;
+      will-change: width;
+      box-sizing: unset;
+    }
+  }
+}
+.practiceWrapper {
+  margin-top: $headerHeight;
+  margin-bottom: $footerHeight;
+  width: 100%;
+  // height: calc(100vh - #{$headerHeight} - #{$footerHeight});
+  display: flex;
+  justify-content: center;
+  // overflow: scroll;
+}
+.practiceList {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  // grid-template-columns: repeat(4, length);
+  grid-template-columns: repeat(4, auto);
+  column-gap: $baseSpacing;
+  row-gap: $baseSpacing * 2;
+
+  // grid-template-columns: auto auto auto auto auto auto;
+  margin-top: $baseSpacing * 2;
+  padding: 0 $baseSpacing * 2;
+  // transform-style: preserve-3d;
+  // perspective: 900px;
+}
+.practiceItem {
+  position: relative;
+  width: 100%;
+  border-radius: $baseSpacing;
+  // perspective: 100px;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 10px rgb(0, 0, 0);
+  overflow: hidden;
+  &:hover {
+    .pt {
+      .practice__Name-card {
+        width: 100%;
+        text-align: center;
+        font-size: 32px;
+      }
+    }
+  }
+  // &.active {
+  //   a {
+  //     width: 100%;
+  //     text-align: center;
+  //     font-size: 32px;
+  //   }
+  // }
+
+  .pt {
+    padding-top: 50%;
+    .practice__Name-card {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      width: 90px;
+      font-size: 20px;
+      color: rgba(0, 0, 0, 0.2);
+      background: currentColor;
+      // border-radius: 8px 0 0 8px;
+      transition: 0.3s;
+
+      &::after {
+        position: absolute;
+        left: 100%;
+        top: 0;
+        height: 100%;
+        content: "";
+        width: 50%;
+        background: currentColor;
+        clip-path: polygon(0 0, 50% 50%, 0 100%);
+      }
+      .practiceName {
+        color: #fff;
+      }
+    }
+  }
+
+  .practiceItem__wrapper {
+    display: block;
+  }
+
+  .practiceItem__BG {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // border-radius: 8px;
+  }
+  &:nth-child(2n + 1) .practiceItem__BG {
+    background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
+    // background-image: linear-gradient(
+    //   to top,
+    //   #bdc2e8 0%,
+    //   #bdc2e8 1%,
+    //   #e6dee9 100%
+    // );
+    // background-image: linear-gradient(
+    //   to top,
+    //   #505285 0%,
+    //   #585e92 12%,
+    //   #65689f 25%,
+    //   #7474b0 37%,
+    //   #7e7ebb 50%,
+    //   #8389c7 62%,
+    //   #9795d4 75%,
+    //   #a2a1dc 87%,
+    //   #b5aee4 100%
+    // );
+    // background-image: linear-gradient(
+    //   to top,
+    //   #a7a6cb 0%,
+    //   #8989ba 52%,
+    //   #8989ba 100%
+    // );
+    // background-image: linear-gradient(to top, #feada6 0%, #f5efef 100%);
+    // background-image: linear-gradient(to top, #c71d6f 0%, #d09693 100%);
+  }
+  &:nth-child(2n) .practiceItem__BG {
+    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+    // background-image: linear-gradient(to right, #434343 0%, black 100%);
+    // background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+  }
+}
+
+// ------------------------------------------------------------------------------------------------
+@import "responsive";
